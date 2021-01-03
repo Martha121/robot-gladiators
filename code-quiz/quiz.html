@@ -6,14 +6,21 @@
     <title>Questions</title>
 </head>
 <body onload="onloadFunction()">
-    <div>
-        <a href="">High scores</a>
-        <h3>time:</h3>
+    <a href="">High scores</a>
+    <h3>time:</h3>
+    <div id="question-div">
         <h1 id= "question">Primera pregunta</h1>
         <button type="button" id = "answer-1">Opcion a</button>
         <button type="button" id = "answer-2">Opcion b</button>
         <button type="button" id = "answer-3">Opcion c</button>
         <button type="button" id = "answer-4">Opcion d</button>
+    </div>
+    <div id="final-score" display="none">
+        <h1>All Done!</h1>
+        <h2 id="high-score">Your high score is ...</h2>
+        <label>Enter your initials:</label>
+        <input type="text">
+        <button type="button" id = "submit-high-score">Submit</button>
     </div>
     <script src="./assets/js/script.js"></script>
 </body>
