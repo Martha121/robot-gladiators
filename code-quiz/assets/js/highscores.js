@@ -25,17 +25,12 @@ function displayHighScores()
 }
 
 function createScoreEl(scoreInitials, scoreValue) {
-    // create list item
-    var listItemEl = document.createElement("li");
-    listItemEl.className = "score-item";
-
     // create div to hold score info and add to list item
     var scoreInfoEl = document.createElement("div");
     scoreInfoEl.className = "score-info";
     
     // add HTML content to div
-    listItemEl.innerHTML = "<h3 class='task-name'>" + scoreInitials + "</h3><span class='task-type'>" + scoreValue + "</span>";
-    scoreInfoEl.appendChild(listItemEl);   
+    scoreInfoEl.innerHTML = "<h3 class='task-name'>" + scoreInitials + " " + scoreValue + "</h3>";
 
     var highScoresDiv = document.querySelector("#highscores-div");
     highScoresDiv.append(scoreInfoEl);

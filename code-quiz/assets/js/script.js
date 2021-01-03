@@ -1,14 +1,15 @@
 var allQuestions = [];
-allQuestions.push(["THis is for first question","op1","op2","op3","op4",2,0]);
-allQuestions.push(["THis is for second question","xxop1","op2","op3","op4",2,0]);
-allQuestions.push(["THis is for third question","yyop1","op2","op3","op4",2,0]);
-allQuestions.push(["THis is for fourth question","zzop1","op2","op3","op4",2,0]);
-allQuestions.push(["THis is for fifth question","ffop1","op2","op3","op4",2,0]);
+allQuestions.push(["Commonly used data types DO Not include?","strings","booleans","alerts","numbers",3,0]);
+allQuestions.push(["The condition in an if/else statement is enclosed with?","quotes","curly brackets","parenthesis","square brackets",3,0]);
+allQuestions.push(["Arrays in JavaScript can be used to store?","numbers and strings","other arrays","booleans","all of the above",4,0]);
+allQuestions.push(["String values must be enclosed within ___ when being assigned to variables","comas","curly brackets","quotes","parenthesis",3,0]);
+allQuestions.push(["A very useful tool used during development and debbuging for printing content to the debugger is:","Javascript","terminal/bash","for loops","console.log",4,0]);
+
 var indexOfCurrentQuestion = 0;
 var allHighScores = [];
 var totalScore = 0;
 var timer = 75;
-var timePenalty = 5;
+var timePenalty = 10;
 
 // Handle button event during answers on quiz
 var firstButtonEl = document.querySelector("#answer-1");
@@ -35,12 +36,15 @@ fourthButtonEl.addEventListener("click", function(){
 })
 
 function evaluateAnswer(){
+    var myDiv = document.querySelector("#result-status");
     if(allQuestions[indexOfCurrentQuestion][6] == allQuestions[indexOfCurrentQuestion][5]){
-        // Answer is correct, increase score
+        // Answer is correct, increase score and update message
         totalScore++;
+        myDiv.textContent = "Correct!";
     }else{
-        // Answer is incorrect, aply time penalty
+        // Answer is incorrect, aply time penalty and update message
         timer = timer - timePenalty;
+        myDiv.textContent = "Wrong!";
     }
     // increase counter
     indexOfCurrentQuestion++;
@@ -63,18 +67,6 @@ submitScore.addEventListener("click", function(){
     window.location.replace("highscores.html");
 })
 
-// Compare answers to calculate total score
-function calculateScore(){
-    var totalScore = 0;
-    for(var i=0; i<allQuestions.length; i++)
-    {
-        if (allQuestions[i][5] == allQuestions[i][6])
-        {
-            totalScore++;
-        }
-    }
-    return totalScore;
-}
 //This fucntion initialize Quiz after start button is click
 function onloadFunction()
 {
@@ -102,18 +94,16 @@ function updateTimerDisplay(){
 function updateCurrQuestion(currQuestion){
   var mainQuestionEl = document.querySelector("#question");
   mainQuestionEl.textContent = currQuestion[0];
-  firstButtonEl.textContent = currQuestion[1];
-  secondButtonEl.textContent = currQuestion[2];
-  thirdButtonEl.textContent = currQuestion[3];
-  fourthButtonEl.textContent = currQuestion[4];
+  firstButtonEl.textContent = "1. " + currQuestion[1];
+  secondButtonEl.textContent ="2. " + currQuestion[2];
+  thirdButtonEl.textContent ="3. " + currQuestion[3];
+  fourthButtonEl.textContent ="4. " + currQuestion[4];
 }
 
 // We will hide the quiz question and show the
 // final score and allow user to save their score
 function ShowHighScore()
 {
-    // Calculate total score and put it ina global variable
-    totalScore = calculateScore();
     // Hide all question related elements
     var myDiv = document.getElementById("question-div");
     myDiv.style.display = "none";
