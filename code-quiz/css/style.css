@@ -1,0 +1,26 @@
+body {
+    background: white }
+main {
+    font-size: 20px;
+    background: white;
+    color: black;
+    border-radius: 1em;
+    padding: 1em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) }
+.btn {
+ color: white;
+ background-color:darkblue;
+ font-size: 18px;
+ margin: 5px;
+ padding: 10px 24px;
+ border-radius: 8px;
+ justify-content: center;
+ width: 200px;
+}
+#result-status{
+    color: darkgray;
+}

@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Questions</title>
+    <link rel="stylesheet" href="./css/style.css"/>
 </head>
 <body onload="onloadFunction()">
     <a href="highscores.html">High scores</a>
     <h3 id="timer-display">time:</h3>
-    <div id="question-div">
+<main>
+    <div class= "box" id="question-div">
         <h1 id= "question">"Text for question"</h1>
-        <button type="button" id = "answer-1">Text answer-1</button><br>
-        <button type="button" id = "answer-2">Text answer-2</button><br>
-        <button type="button" id = "answer-3">Text answer-3</button><br>
-        <button type="button" id = "answer-4">Text answer-4</button>
+        <button type="button" class="btn" id = "answer-1">Text answer-1</button><br>
+        <button type="button" class="btn" id = "answer-2">Text answer-2</button><br>
+        <button type="button" class="btn" id = "answer-3">Text answer-3</button><br>
+        <button type="button" class="btn" id = "answer-4">Text answer-4</button>
     </div>
     <div id="final-score" display="none">
         <h1>All Done!</h1>
@@ -25,6 +27,7 @@
     <div>
         <h2 id ="result-status"></h2>
     </div>
+</main>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
